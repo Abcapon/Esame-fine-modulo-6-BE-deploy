@@ -1,0 +1,118 @@
+GET http://localhost:5050/authors
+
+// se voglio testare un'altra chiamata posso farlo inserendo 4 cancelletti per separare le due chiamate
+
+####
+GET http://localhost:5050/posts
+
+// Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmU4YTc4ZjAwOGI0YmE0MTBhYjRhNyIsIm5vbWUiOiJQaXBwdSIsImNvZ25vbWUiOiJEZSBQaXBwdXMiLCJlbWFpbCI6ImRlcGlwcHVzQGdtYWlsLmNvbSIsImJvcm5EYXRlIjoiMTEtMDUtMTk5OSIsImF2YXRhciI6IiIsImlhdCI6MTY5NzU1NjcxMywiZXhwIjoxNjk3NjQzMTEzfQ.o-uPWYCjsEIvsBpzuKiEWbX__8kyUDXNF1UoQrrhb8Y
+
+####
+GET http://localhost:5050/posts/652bd69ba776f2c7bc57c62e/comments
+
+####
+GET http://localhost:5050/posts/652bd69ba776f2c7bc57c62e/comments/652bed72bacdf5b883a76bb7
+
+
+####
+GET http://localhost:5050/authors/652138047d1566d53ea55aac
+
+####
+GET http://localhost:5050/posts/652bd69ba776f2c7bc57c62e
+
+####
+POST http://localhost:5050/authors
+Content-Type: application/json
+
+{
+    "nome": "Pippu",
+    "cognome": "De Pippus",
+    "email": "depippus@gmail.com",
+    "bornDate":"11-05-1999",
+    "avatar": "",
+    "password": "passWorDdiProvA"
+}
+
+####
+
+POST http://localhost:5050/posts
+Content-Type: application/json
+
+{
+    "category": "Web4",
+		"title": "Testing API4",
+		"cover": "",
+		"readTime": {
+			"value": 13
+		},
+		"author": "6536a97df64c6d461dcc9866",
+		"content": "L'errore che stai riscontrando sembra essere legato alla gestione delle rotte in React Router. Il problema principale è nella definizione della rotta per"
+}
+
+####
+POST http://localhost:5050/posts/652bd69ba776f2c7bc57c62e/comments
+Content-Type: application/json
+
+{
+  "userName": "Pablo",
+  "avatar": "",
+  "commentBody": "test commenti3",
+  "post": "652bd69ba776f2c7bc57c62e"
+}
+
+####
+PATCH http://localhost:5050/authors/65213b99acf77dc04d90986c/
+Content-Type: application/json
+
+{
+    "nome": "Pappo Change",
+    "cognome": "De Pappus2"
+}
+
+####
+PATCH http://localhost:5050/posts/652673d4048d6c378f9a703f
+Content-Type: application/json
+
+{
+    "title": "testing patch"
+}
+####
+DELETE http://localhost:5050/authors/652673d4048d6c378f9a703f
+
+####
+DELETE http://localhost:5050/posts/6526d3234bdf7c6389848df2
+
+####
+DELETE http://localhost:5050/posts/652bd69ba776f2c7bc57c62e/comments/652bed72bacdf5b883a76bb7
+
+####
+POST http://localhost:5050/send-email
+Content-Type: application/json
+
+{
+    "subject": "email confidenziale",
+    "text": "questa è una prova di funzionamento dell'email"
+}
+
+####
+POST http://localhost:5050/login
+Content-Type: application/json
+
+{
+    "email": "depippus@gmail.com",
+    "password": "passWorDdiProvA"
+}
+
+####
+GET http://localhost:5050/login
+loggedInUser: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmU4YTc4ZjAwOGI0YmE0MTBhYjRhNyIsIm5vbWUiOiJQaXBwdSIsImNvZ25vbWUiOiJEZSBQaXBwdXMiLCJlbWFpbCI6ImRlcGlwcHVzQGdtYWlsLmNvbSIsImJvcm5EYXRlIjoiMTEtMDUtMTk5OSIsImF2YXRhciI6IiIsImlhdCI6MTY5NzgwNzAxMywiZXhwIjoxNjk3ODkzNDEzfQ.hT7PGYXmblRdTaI44NgsweHoYd3lXHD8j4yAf1uydSE
+
+####
+GET http://localhost:5050/me
+loggedInUser: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmU4YTc4ZjAwOGI0YmE0MTBhYjRhNyIsIm5vbWUiOiJQaXBwdSIsImNvZ25vbWUiOiJEZSBQaXBwdXMiLCJlbWFpbCI6ImRlcGlwcHVzQGdtYWlsLmNvbSIsImJvcm5EYXRlIjoiMTEtMDUtMTk5OSIsImF2YXRhciI6IiIsImlhdCI6MTY5NzgwNzAxMywiZXhwIjoxNjk3ODkzNDEzfQ.hT7PGYXmblRdTaI44NgsweHoYd3lXHD8j4yAf1uydSE
+
+####
+GET http://localhost:5050/logout
+
+####
+POST http://localhost:5050/verify
